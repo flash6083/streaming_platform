@@ -11,6 +11,14 @@
   font-family: 'Poppins', sans-serif;
 }
 
+:root {
+  --white: rgb(255, 255, 255);
+  --black: rgb(0, 0, 0);
+  --grey-light: #E7E7E7;
+  --grey-medium: #CECECE;
+  --grey-medium: #696969;
+}
+
 a {
   color: inherit;
   text-decoration: none;
