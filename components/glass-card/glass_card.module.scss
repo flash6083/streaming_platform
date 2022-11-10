@@ -37,7 +37,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 2vw 3vw;
+        padding: 2vw 1vw;
         font-family: 'Jost', sans-serif !important;
 
         .meta_name{
@@ -54,11 +54,14 @@
                 .heading{
                     font-size: 1.5vw;
                     font-weight: 500;
+                    line-height: 1em;
+                    font-family: 'Jost', sans-serif !important;
                 }
                 .sub_heading{
                     font-size: 1vw;
                     color: var(--grey-dark);
                     margin-top: 3%;
+                    font-family: 'Jost', sans-serif !important;
                 }
             }
         }
@@ -75,6 +78,7 @@
             p{
                 font-size: 1.3vw;
                 color: var(--grey-medium);
+                font-family: 'Jost', sans-serif !important;
             }
         }
     }
