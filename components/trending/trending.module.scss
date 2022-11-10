@@ -1,0 +1,22 @@
+.trend{   
+    position: fixed ;
+    height: 100vh;
+    overflow-y: scroll;
+    border-right: 2px solid var(--grey-extra-light);
+
+    p{
+        font-family: 'Jost', sans-serif !important;
+        font-size: 1.7vw;
+        color: var(--grey-medium);
+        //margin-bottom: 1rem;
+    }
+
+    .list{
+        // height: max-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2vw;
+        //margin-top: 2vw;
+    }
+}

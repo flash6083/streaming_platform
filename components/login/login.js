@@ -1,9 +1,12 @@
 import {useEffect, useState} from 'react'
+import { useRouter } from 'next/router'
 
 import styles from './login.module.scss'
 
 
 const Login = () => {
+
+    const router = useRouter()
 
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
@@ -16,6 +19,10 @@ const Login = () => {
     const handlePass = (event) => {
         const {value} = event.target
         setPassword(value)
+    }
+
+    const handleClick = () => {
+        router.push('/dashboard')
     }
 
 
@@ -34,8 +41,12 @@ const Login = () => {
                 type='email' placeholder='Password' onChange={handlePass} required />
 
                 <div className={styles.btns}>
-                    <span className={styles.login_btn}><p>Login</p></span>
-                    <span className={styles.sign_up}><p>Sign Up</p></span>
+                    <span className={styles.login_btn} onClick={handleClick}>
+                        <p>Login</p>
+                    </span>
+                    <span className={styles.sign_up} onClick={handleClick}>
+                        <p>Sign Up</p>
+                    </span>
                 </div>
             </div>
             
