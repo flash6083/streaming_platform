@@ -9,6 +9,7 @@ const TrendingSection = () => {
                 <GlassCard/>
                 <GlassCard/>
                 <GlassCard/>
+                <GlassCard/>
             </div>
         </div>
     );
