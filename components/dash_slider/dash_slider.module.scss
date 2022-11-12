@@ -1,33 +1,35 @@
 .slider{
     //min-width: 100%;
     // width: 100%;
-    // height: 100%;
+    height: 100%;
     //overflow-x: scroll;
     position: relative;
     //overflow-y: scroll;
 
-    // h1{
-    //     font-size: 1.3vw;
-    //     font-weight: 500;
-    //     line-height: 1em;
-    //     margin-bottom: 1vw;
-    // }
+    h1{
+        font-size: 1.3vw;
+        font-weight: 500;
+        line-height: 1em;
+        margin-bottom: 1vw;
+    }
 
-    // .containerClass{
-    //     position: absolute;
-    // }
+
 
     .cards{
         // display: flex;
         // gap: 1.2vw;
         // overflow-x: scroll;
+        width: 100%;
+        height: 100%;
         position: absolute;
         //width: max-content;
-
+        
         // ul{
-        //     li{
-
-        //     }
+        //     gap: 6vw !important;
         // }
+        // li{
+        //     width: max-content !important;
+        // }
+    
     }
 }
