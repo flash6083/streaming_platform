@@ -1,8 +1,9 @@
 import DashLanding from '../dash-landing/dash_landing';
+import DashSlider from '../dash_slider/dash_slider';
 import TrendingSection from '../trending/trending';
 import styles from './dashboard.module.scss'
 
-const Dashboard = ({trending}) => {
+const Dashboard = ({trending, nowPlaying}) => {
     return ( 
         <div className={styles.dash}>
             <div className={styles.dash_left}>
@@ -10,7 +11,8 @@ const Dashboard = ({trending}) => {
             </div>
 
             <div className={styles.dash_right}>
-                {/* <DashLanding/> */}
+                <DashLanding cover={trending.results[6]}/>
+                <DashSlider data={nowPlaying}/>
             </div>
         </div>
     );

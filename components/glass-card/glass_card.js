@@ -5,26 +5,30 @@ import imageUrl from '../../constants/imageUrl'
 
 import styles from './glass_card.module.scss'
 
-const GlassCard = ({details}) => {
+const GlassCard = ({details, ht, wd, hf, sf, rf}) => {
 
     return ( 
         <>
-        <div className={styles.glass_card}>
-            <img src={`${imageUrl}${details.poster_path}`} alt='test'  />
+        <div className={styles.glass_card} style={{width:`${wd}vw`, height: `${ht}vw`}}>
+            <img src={ wd===60 ? '/cover_pic.jpg' : `${imageUrl}${details.poster_path}`} alt='test'  />
             <div className={styles.glass_overlay}></div>
             <div className={styles.meta_details}>
                 <div className={styles.meta_name}>
                     <span><HiOutlinePlay size={30} /></span>
                     <div className={styles.name}>
-                        <p className={styles.heading}>
-                            {details.original_title || details.original_name}
+                        <p className={styles.heading} style={{fontSize:`${hf}vw`}}>
+                            {wd===60 ? "Avengers: Endgame" : 
+                            (details.original_title || details.original_name)}
                         </p>
-                        <p className={styles.sub_heading}>Action/Adventure</p>
+                        <p className={styles.sub_heading} style={{fontSize: `${sf}vw`}}> 
+                            {wd===60 ? '2019-04-26' : 
+                            (details.release_date || details.first_air_date)} 
+                        </p>
                     </div>
                 </div>
                 <div className={styles.meta_rating}>
                     <span><FiStar size={10} /></span>
-                    <p>{details.vote_average}</p>
+                    <p style={{fontSize: `${rf}vw`}}>{details.vote_average.toFixed(2)}</p>
                 </div>
             </div>
         </div>

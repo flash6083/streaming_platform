@@ -8,7 +8,10 @@ const TrendingSection = ({trending}) => {
             <div className={styles.list}>
                 {
                     trending.map((trend, index) => (
-                        <GlassCard key={index} details={trend}/>
+                        <GlassCard key={index} 
+                        details={trend} ht={17.6} wd={24} hf={1.2} sf={0.8}
+                        rf={0.9}
+                        />
                     ))
                 }
             </div>

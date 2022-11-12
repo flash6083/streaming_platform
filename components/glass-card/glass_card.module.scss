@@ -24,7 +24,7 @@
         border-radius: 1vw 1vw 0 0;
         
         backdrop-filter: blur(10px) saturate(180%);
-        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(10px) saturate(180%);
         background-color: rgba(17, 25, 40, 0.75);
     }
 
@@ -52,7 +52,7 @@
             .name{
                 
                 .heading{
-                    font-size: 1.5vw;
+                    font-size: 1.3vw;
                     font-weight: 500;
                     line-height: 1em;
                     font-family: 'Jost', sans-serif !important;
@@ -60,7 +60,7 @@
                 .sub_heading{
                     font-size: 1vw;
                     color: var(--grey-dark);
-                    margin-top: 3%;
+                    margin-top: 1%;
                     font-family: 'Jost', sans-serif !important;
                 }
             }

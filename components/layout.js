@@ -16,10 +16,10 @@ const Layout = ({children}) => {
     },[path])
 
     return ( 
-        <div>
+        <>
             {nav && <Navbar/>}
             {children}
-        </div>
+        </>
     );
 }
  
