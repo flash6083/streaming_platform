@@ -9,11 +9,31 @@
   font-family: 'DM Sans', sans-serif !important;
   font-family: 'Jost', sans-serif;
   font-family: 'Poppins', sans-serif;
+
+  scroll-behavior: smooth;
 }
 
 body{
   /* overflow: hidden; */
   overflow-x: hidden; 
+}
+
+::-webkit-scrollbar{
+  width: 0.5vw;
+}
+
+::-webkit-scrollbar-track{
+  background: #000;
+}
+
+
+::-webkit-scrollbar-thumb{
+  background: rgba(196, 196, 196, 0.854);
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background: rgba(255, 239, 218, 0.854)
 }
 
 :root {

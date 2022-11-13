@@ -4,23 +4,23 @@ import apiKey from '../constants/tmdb_api_key'
 import baseURL from '../constants/tmdb_baseUrl';
 import lang from "../constants/language";
 
-export const getStaticProps = async () => {
+// export const getStaticProps = async () => {
 
-    const res2 = await fetch(`${baseURL}movie/now_playing?api_key=${apiKey}${lang}&page=1`)
-    const nowPlaying = await res2.json()
+//     const res2 = await fetch(`${baseURL}movie/now_playing?api_key=${apiKey}${lang}&page=1`)
+//     const nowPlaying = await res2.json()
   
-    return {
-      props: {
-        nowPlaying
-      },
-      revalidate: 36000
-    }
-}
+//     return {
+//       props: {
+//         nowPlaying
+//       },
+//       revalidate: 36000
+//     }
+// }
 
-const FavouritePage = ({nowPlaying}) => {
+const FavouritePage = () => {
     return ( 
         <div>
-            <FavouriteComponent nowPlaying={nowPlaying}/>
+            <FavouriteComponent/>
         </div>
     );
 }
