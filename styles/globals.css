@@ -43,6 +43,7 @@ body{
   --grey-medium: #CECECE;
   --grey-dark: #696969;
   --grey-extra-light: rgba(169, 169, 169, 0.17);
+  --black-blue: #00181D;
 }
 
 a {

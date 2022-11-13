@@ -6,7 +6,7 @@ import lang from "../constants/language";
 
 export const getStaticProps = async () => {
 
-    const res = await fetch(`${baseURL}trending/all/day?api_key=${apiKey}`)
+    const res = await fetch(`${baseURL}trending/movie/day?api_key=${apiKey}`)
     const trending = await res.json()
 
     const res2 = await fetch(`${baseURL}movie/now_playing?api_key=${apiKey}${lang}&page=1`)
