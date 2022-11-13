@@ -3,32 +3,29 @@ import baseURL from '../constants/tmdb_baseUrl';
 import lang from '../constants/language';
 import ProductComponent from '../components/product/productPage';
 
-var check=''
+
 
 export const getServerSideProps = async (context) => {
     const id = context.params.id
+    const check = id.slice(-2)
 
+    if(check === 'mv'){ 
+        const res = await fetch(`${baseURL}/movie/${id}/videos?api_key=${apiKey}${lang}`)
+        const video = await res.json()
 
-    const res = await fetch(`${baseURL}/movie/${id}/videos?api_key=${apiKey}${lang}`)
-    const video = await res.json()
+        const res2 = await fetch(`${baseURL}/movie/${id}?api_key=${apiKey}${lang}`)
+        const product = await res2.json()
 
-    const res2 = await fetch(`${baseURL}/movie/${id}?api_key=${apiKey}${lang}`)
-    const product = await res2.json()
-
-    if(video.results!= undefined){
-        if(video.results.length != 0){
-            return{
-                props:{
-                    video: video,
-                    product: product,
-                    check
-                }
+        return{
+            props:{
+                video: video,
+                product: product,
             }
         }
-        
     }
 
-    else{
+
+    else if(check === 'tv'){
         const res = await fetch(`${baseURL}/tv/${id}/videos?api_key=${apiKey}${lang}`)
         const video = await res.json()
 
@@ -39,7 +36,6 @@ export const getServerSideProps = async (context) => {
             props:{
                 video: video,
                 product: product,
-                check
             }
         }
     }
@@ -47,8 +43,7 @@ export const getServerSideProps = async (context) => {
    
 }
 
-const product = ({video, product, check}) => {
-    console.log(check);
+const product = ({video, product}) => {
     return(
         <ProductComponent video={video} product={product} />
     )

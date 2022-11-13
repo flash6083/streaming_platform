@@ -2,6 +2,7 @@ import GlassCard from '../glass-card/glass_card';
 import Carousel from 'react-multi-carousel';
 
 import styles from './dash_slider.module.scss'
+import Link from 'next/link';
 
 const responsive = {
     desktop: {
@@ -32,8 +33,10 @@ const DashSlider = ({data}) => {
             className={styles.itemClass}
             >
             {data.results.map((item, index) => (
-                        <GlassCard key={index} details={item} ht={13.9} 
+                      <Link key={index} href={`/${item.id}mv`}>
+                        <GlassCard details={item} ht={13.9} 
                             wd={19} hf={1} sf={0.6} rf={0.9}/>
+                      </Link>
                         ))}
             </Carousel>
         </div>

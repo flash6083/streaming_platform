@@ -1,3 +1,3 @@
-const ytUrl = 'https://www.youtube.com/watch?v='
+const ytUrl = 'https://www.youtube.com/embed/'
 
 export default ytUrl
