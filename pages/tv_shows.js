@@ -5,7 +5,7 @@ import TvPage from '../components/tv_page/tv_page';
 
 export const getStaticProps = async () => {
 
-    const res = await fetch(`${baseURL}tv/popular?api_key=${apiKey}${lang}&page=1`)
+    const res = await fetch(`${baseURL}discover/tv?api_key=${apiKey}`)
     const shows = await res.json()
   
     return {

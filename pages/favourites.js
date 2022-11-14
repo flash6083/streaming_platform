@@ -1,8 +1,9 @@
+import Favourite from "../components/favouritePage/favourite";
 
 const FavouritePage = () => {
     return ( 
         <div>
-            in favourites page
+            <Favourite/>
         </div>
     );
 }

@@ -5,7 +5,7 @@ import MoviePage from "../components/movies_page/movies_page";
 
 export const getStaticProps = async () => {
 
-    const res = await fetch(`${baseURL}movie/popular?api_key=${apiKey}${lang}&page=1`)
+    const res = await fetch(`${baseURL}discover/movie?api_key=${apiKey}`)
     const movies = await res.json()
   
     return {
