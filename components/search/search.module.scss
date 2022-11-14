@@ -11,8 +11,9 @@
     .search_container{
         width: 100%;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
+        gap: 1vw;
         .search_input{
             background: none;
             color: rgb(214, 214, 214);
@@ -36,11 +37,7 @@
             border-radius: 2vw;
             text-align: center;
             transition: all 0.3s cubic-bezier(.19,1,.22,1);
-            font-size: 1.3vw;
-
-            &:last-child{
-                background-color: rgb(223, 48, 48);
-            }
+            font-size: 1vw;
 
             &:hover{
                 cursor: pointer;

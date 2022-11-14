@@ -17,18 +17,18 @@ const GlassCard = ({details, ht, wd, hf, sf, rf}) => {
                     <span><HiOutlinePlay size={30} /></span>
                     <div className={styles.name}>
                         <p className={styles.heading} style={{fontSize:`${hf}vw`}}>
-                            {wd===60 ? "Avengers: Endgame" : 
-                            (details.original_title || details.original_name)}
+                            {details.original_title || details.original_name}
                         </p>
                         <p className={styles.sub_heading} style={{fontSize: `${sf}vw`}}> 
-                            {wd===60 ? '2019-04-26' : 
-                            (details.release_date || details.first_air_date)} 
+                            {details.release_date || details.first_air_date} 
                         </p>
                     </div>
                 </div>
                 <div className={styles.meta_rating}>
                     <span><FiStar size={10} /></span>
-                    <p style={{fontSize: `${rf}vw`}}>{details.vote_average.toFixed(2)}</p>
+                    <p style={{fontSize: `${rf}vw`}}>
+                        {details.vote_average? details.vote_average.toFixed(2) : 0}
+                    </p>
                 </div>
             </div>
         </div>

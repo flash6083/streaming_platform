@@ -7,13 +7,19 @@ import styles from './productPage.module.scss'
 
 const ProductComponent = ({video, product}) => {
   const [dim, setDim] = useState({x:0,y:0})
+  var trailer;
 
-  var trailer = video.results.find(item => {
-    return item.name.includes("Official Trailer")
-  })
+  if(video.results){
 
-  trailer = trailer ? trailer : video.results[0]
-  
+    trailer = video.results.find(item => {
+      return item.name.includes("Official Trailer")
+    })
+
+    trailer = trailer ? trailer : video.results[0]
+  }else{
+    trailer=''
+  }
+
   useEffect(() => {
     const width = window.innerWidth
     const height = window.innerHeight

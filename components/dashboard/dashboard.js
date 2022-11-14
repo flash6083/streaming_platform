@@ -11,7 +11,7 @@ const Dashboard = ({trending, nowPlaying}) => {
             </div>
 
             <div className={styles.dash_right}>
-                <DashLanding cover={trending.results[6]}/>
+                <DashLanding/>
                 <DashSlider data={nowPlaying}/>
                 <DashSlider data={nowPlaying}/>
                 <DashSlider data={nowPlaying}/>
