@@ -28,7 +28,7 @@ const Login = () => {
 
     return ( 
         <div className={styles.login_bg} >
-            <img src="/Main.jpg" alt="login-cover" />
+            <img src="/Main-min.jpg" alt="login-cover" />
             <div className={styles.login_text}>
                 <h1>MOTION</h1>
                 <p>Unlimited Movies and TV shows <br/> Anywhere, anytime!</p>
