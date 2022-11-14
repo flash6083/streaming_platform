@@ -54,7 +54,7 @@ const Navbar = () => {
                     <span className={styles.search_icon}>  
                         <Link href='/search'><FiSearch size={20}/></Link> 
                     </span>
-                    <p>Welcome Flash</p>
+                    <p>Welcome User</p>
                 </div>
             </div>
         </div>

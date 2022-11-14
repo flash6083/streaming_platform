@@ -23,17 +23,18 @@ const responsive = {
 };
 
 const DashSlider = ({data}) => {
+  
     return ( 
         <div className={styles.slider}>
 
-        <h1>Popular movies</h1>
+        <h1>{data.displayName}</h1>
 
         <div className={styles.cards}>
             <Carousel swipeable={true} responsive={responsive}  draggable={false}
             className={styles.itemClass}
             >
-            {data.results.map((item, index) => (
-                      <Link key={index} href={`/${item.id}mv`}>
+            {data.value.results.map((item, index) => (
+                      <Link key={index} href={`/${item.id}${data.type}`}>
                         <GlassCard details={item} ht={13.9} 
                             wd={19} hf={1} sf={0.6} rf={0.9}/>
                       </Link>
