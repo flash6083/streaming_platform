@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import Link from 'next/link';
 import {FiSearch} from 'react-icons/fi';
 
+
+
 import styles from './navbar.module.scss'
 
 const Navbar = () => {

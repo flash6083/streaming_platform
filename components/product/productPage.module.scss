@@ -61,11 +61,21 @@
                 color: var(--grey-medium);
             }
 
+            .add_fav{
+                margin-top: 1.3vw;
+                color: rgb(255, 164, 29);
+                cursor: pointer;
+                span{
+                    font-size: 1.4vw;
+                    margin-left: 1vw;
+                }
+            }
+
             p{
                 font-size: 1.4vw;
                 color: var(--grey-dark);
                 letter-spacing: 0.03em;
-                margin-top: 2.5vw;
+                margin-top: 2vw;
                 line-height: 3vw;
             }
         }

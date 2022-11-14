@@ -20,7 +20,7 @@ const SelectCompo = () => {
         <div className={styles.selectWrapper}>
             <Box sx={{ minWidth: 120 }}>
                 <FormControl sx={{ m: 1, minWidth: 120}} size="small" error>
-                    <InputLabel id="demo-simple-select-label">Age</InputLabel>
+                    <InputLabel id="demo-simple-select-label">Genre</InputLabel>
                     <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"

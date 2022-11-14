@@ -1,10 +1,13 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import AppContext from "./AppContext";
 import Navbar from "./navbar/navbar";
 
 const Layout = ({children}) => {
-
+    const [nameContext, setNameContext] = useState({results:[]})
     const [nav, setNav] = useState(true)
+
     const router = useRouter()
     const path = router.asPath
 
@@ -17,8 +20,14 @@ const Layout = ({children}) => {
 
     return ( 
         <>
-            {nav && <Navbar/>}
-            {children}
+            <Head>
+            <meta name="description" content="Digital Streaming Platform"/>
+            <title>Motion</title>
+            </Head>
+            <AppContext.Provider value={{nameContext, setNameContext}}>
+                {nav && <Navbar/>}
+                {children}
+            </AppContext.Provider>
         </>
     );
 }
