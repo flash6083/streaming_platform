@@ -10,6 +10,7 @@ const Login = () => {
 
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
+    const [hidden, setHidden] = useState(true)
 
     const handleEmail = (event) => {
         const {value} = event.target
@@ -38,7 +39,13 @@ const Login = () => {
                 type='email' placeholder='Email' onChange={handleEmail} required />
 
                 <input className={styles.form_input}
-                type='email' placeholder='Password' onChange={handlePass} required />
+                type={hidden ? "password" : "text"} 
+                placeholder='Password' onChange={handlePass} required />    
+
+                <label className={styles.pass}>
+                    <input type="checkbox" onClick={() => setHidden(!hidden)}/>
+                         <span>Show Password</span>
+                </label>
 
                 <div className={styles.btns}>
                     <span className={styles.login_btn} onClick={handleClick}>

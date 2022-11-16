@@ -38,7 +38,7 @@
 
     .card {
         width: 40vw;
-        height: 20vw;
+        height: 22vw;
         padding: 2vw 4vw;
 
         backdrop-filter: blur(16px) saturate(180%);
@@ -71,6 +71,16 @@
 
             &:first-child{
                 margin-bottom: 2vw;
+            }
+        }
+
+        .pass{
+            display: inline-block;
+            margin-top: 2vw;
+
+            font-size: 1.3vw;
+            span{
+                margin-left: 1vw;
             }
         }
 

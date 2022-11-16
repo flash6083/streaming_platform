@@ -37,11 +37,7 @@ const Search = () => {
     
 
     const handleVoice1 = () => {
-        setListening(true)
-    }
-
-    const handleVoice2 = () => {
-        setListening(false)       
+        setListening(!listening)
     }
 
     const handleVoiceSearch = async () => {
@@ -103,10 +99,8 @@ const Search = () => {
                 <span onClick={handleMovie}>Search Movie</span>
                 <span onClick={handleTV} style={{backgroundColor:'#3c1ae8'}}>
                 Search TV Show</span>
-                <span onClick={handleVoice1} style={{backgroundColor:'#0fd122'}}>
-                Start Voice</span>
-                <span onClick={handleVoice2} style={{backgroundColor:'#d60f04'}}>
-                Stop voice</span>
+                <span onClick={handleVoice1} style={{backgroundColor:'#2ba3ff'}}>
+                {!listening ? 'Voice Search' : 'listening...'}</span>
             </div>
             <div className={styles.searched_items}>
                 {movies.results.length > 0 ? movies.results.map((movie, index) => (

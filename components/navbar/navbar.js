@@ -55,6 +55,7 @@ const Navbar = () => {
                         <Link href='/search'><FiSearch size={20}/></Link> 
                     </span>
                     <p>Welcome User</p>
+                    <p onClick={() => router.push('/')} className={styles.logout}>Logout</p>
                 </div>
             </div>
         </div>
