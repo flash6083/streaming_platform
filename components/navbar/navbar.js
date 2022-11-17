@@ -1,17 +1,27 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Link from 'next/link';
 import {FiSearch} from 'react-icons/fi';
 
 
 
 import styles from './navbar.module.scss'
+import AppContext from "../AppContext";
 
 const Navbar = () => {
     
     const [routeName, setRouteName] = useState('')
     const router = useRouter()
     const path = router.asPath
+    const context = useContext(AppContext)
+
+    const handleLogout = () => {
+        context.setNameContext({
+            results:[],
+            user:''
+        })
+        router.push('/')
+    }
 
     useEffect(() => {
         setRouteName(path)
@@ -47,6 +57,11 @@ const Navbar = () => {
                         Favourites
                     </div>
                 </Link>
+                <Link href='/pricing'>
+                    <div className={routeName === '/pricing' ? styles.link : styles.link_grey}>
+                        Pricing
+                    </div>
+                </Link>
             </div>
 
             <div className={styles.search}>
@@ -54,8 +69,8 @@ const Navbar = () => {
                     <span className={styles.search_icon}>  
                         <Link href='/search'><FiSearch size={20}/></Link> 
                     </span>
-                    <p>Welcome User</p>
-                    <p onClick={() => router.push('/')} className={styles.logout}>Logout</p>
+                    <p>Welcome {context.nameContext.user}</p>
+                    <p onClick={handleLogout} className={styles.logout}>Logout</p>
                 </div>
             </div>
         </div>

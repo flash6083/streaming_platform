@@ -1,20 +1,45 @@
-import {useEffect, useState} from 'react'
+import {useContext, useEffect, useState, React} from 'react'
 import { useRouter } from 'next/router'
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 
+import AppContext from '../AppContext'
+import axios from 'axios'
 import styles from './login.module.scss'
-
 
 const Login = () => {
 
+    const context = useContext(AppContext)
+
     const router = useRouter()
 
-    const [email, setEmail] = useState()
+    const [open, setOpen] = useState(false);
+    const [username, setUserName] = useState()
     const [password, setPassword] = useState()
     const [hidden, setHidden] = useState(true)
+    const [msg, setMsg] = useState('')
+
+    useEffect(() => {
+        if(context.nameContext.user){
+            router.push("/dashboard")
+        }
+    }, []);
+
+    const handleClickSnack = () => {
+        setOpen(true);
+      };
+    
+      const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+          return;
+        }
+    
+        setOpen(false);
+      };
 
     const handleEmail = (event) => {
         const {value} = event.target
-        setEmail(value)  
+        setUserName(value) 
     }
 
     const handlePass = (event) => {
@@ -22,8 +47,49 @@ const Login = () => {
         setPassword(value)
     }
 
-    const handleClick = () => {
-        router.push('/dashboard')
+    const handleSignUp = async () => {
+        const payload = {
+            user: username,
+            password: password
+        }
+        try{
+            const {data} = await axios.post("https://streamingplatformbackend-production.up.railway.app/users/reg", payload)
+            if(data.result.acknowledged){
+                setMsg("Account created!")
+                handleClickSnack()
+                context.setNameContext({
+                    results:[],
+                    user: data.user
+                })
+                router.push("/dashboard")
+            }
+        }catch(err){
+            setMsg(err.response.data.err)
+            handleClickSnack()
+        }
+    }
+
+    const handleLogin = async () => {
+        const payload = {
+            user: username,
+            password: password
+        }
+        try{
+            const {data} = await axios.post("https://streamingplatformbackend-production.up.railway.app/users/login", payload)
+            if(data.msg === "Correct Password"){
+                setMsg(data.msg)
+                handleClickSnack()
+                context.setNameContext({
+                    results:[],
+                    user: data.user
+                })
+                router.push("/dashboard")
+            }
+                     
+        }catch(err){
+            setMsg("Invalid login credentials, try again!")
+            handleClickSnack()
+        }
     }
 
 
@@ -36,7 +102,7 @@ const Login = () => {
             </div>
             <div className={styles.card}>
                 <input className={styles.form_input}
-                type='email' placeholder='Email' onChange={handleEmail} required />
+                type='text' placeholder='Username' onChange={handleEmail} required />
 
                 <input className={styles.form_input}
                 type={hidden ? "password" : "text"} 
@@ -48,14 +114,22 @@ const Login = () => {
                 </label>
 
                 <div className={styles.btns}>
-                    <span className={styles.login_btn} onClick={handleClick}>
+                    <span className={styles.login_btn} onClick={handleLogin}>
                         <p>Login</p>
                     </span>
-                    <span className={styles.sign_up} onClick={handleClick}>
+                    <span className={styles.sign_up} onClick={handleSignUp}>
                         <p>Sign Up</p>
                     </span>
                 </div>
+
+                
             </div>
+            <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+                <MuiAlert elevation={6} variant="filled"
+                onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+                    {msg}
+                </MuiAlert>
+            </Snackbar>
             
         </div>
     );

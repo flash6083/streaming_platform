@@ -5,7 +5,7 @@ import AppContext from "./AppContext";
 import Navbar from "./navbar/navbar";
 
 const Layout = ({children}) => {
-    const [nameContext, setNameContext] = useState({results:[]})
+    const [nameContext, setNameContext] = useState({results:[], user:''})
     const [nav, setNav] = useState(true)
 
     const router = useRouter()
