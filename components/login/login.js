@@ -54,6 +54,7 @@ const Login = () => {
         }
         try{
             const {data} = await axios.post("https://streamingplatformbackend-production.up.railway.app/users/reg", payload)
+            console.log(data);
             if(data.result.acknowledged){
                 setMsg("Account created!")
                 handleClickSnack()
@@ -64,6 +65,7 @@ const Login = () => {
                 router.push("/dashboard")
             }
         }catch(err){
+            console.log(err);
             setMsg(err.response.data.err)
             handleClickSnack()
         }

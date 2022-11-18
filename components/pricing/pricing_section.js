@@ -18,7 +18,7 @@ const pricing_details = [
     {
         "heading": "Standard",
         "features": [
-            "No. of screens at a time - 2",
+            "No. of screens at a time - 4",
             "Global & native content",
             "100 downloads per device",
             "Ad Experience - Ad free experience"
@@ -31,7 +31,7 @@ const pricing_details = [
     {
         "heading": "Premium (Recommended)",
         "features": [
-            "No. of screens at a time - 4",
+            "No. of screens at a time - 6",
             "Global & native content",
             "Unlimited downloads!",
             "Ad Experience - Ad free experience"
