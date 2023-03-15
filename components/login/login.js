@@ -53,7 +53,7 @@ const Login = () => {
             password: password
         }
         try{
-            const {data} = await axios.post("https://streamingplatformbackend-production.up.railway.app/users/reg", payload)
+            const {data} = await axios.post("https://streaming-platform-backend.onrender.com/users/reg", payload)
             console.log(data);
             if(data.result.acknowledged){
                 setMsg("Account created!")
@@ -77,7 +77,7 @@ const Login = () => {
             password: password
         }
         try{
-            const {data} = await axios.post("https://streamingplatformbackend-production.up.railway.app/users/login", payload)
+            const {data} = await axios.post("https://streaming-platform-backend.onrender.com/users/login", payload)
             if(data.msg === "Correct Password"){
                 setMsg(data.msg)
                 handleClickSnack()
